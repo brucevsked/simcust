@@ -105,10 +105,10 @@ CREATE TABLE `sysPermissionT` (
 -- ----------------------------
 
 
-insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000001','user:list' ,'用户列表') ;
-insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000002','user:add'  ,'用户添加')  ;
-insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000003','user:edit' ,'用户修改') ;
-insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000004','user:del'  ,'用户删除')  ;
+insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000001','user:query'  ,'用户列表') ;
+insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000002','user:add'    ,'用户添加')  ;
+insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000003','user:update' ,'用户修改') ;
+insert into `sysPermissionT`(`spId`,`spName`,`spNick`) VALUES('20000000000000000000000000000004','user:del'    ,'用户删除')  ;
 
 
 select * from `sysPermissionT`;
@@ -224,12 +224,12 @@ alter table `sysFunctionT` add constraint fk_sysFunctionT_srId foreign key(`srId
 -- Records of sysFunctionT
 -- ----------------------------
 
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000001','/LoginController/login.html'  ,null                              ,null,'anon')  ;
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000002','/sysUser/sysUserList.html'    ,'20000000000000000000000000000001',null,'perms') ;
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000003','/sysUser/sysUserAdd.html'     ,'20000000000000000000000000000002',null,'perms') ;
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000004','/sysUser/sysUserEdit.html'    ,'20000000000000000000000000000003',null,'perms') ;
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000005','/sysUser/sysUserDel.html'     ,'20000000000000000000000000000004',null,'perms') ;
-insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000006','/test.html'                   ,'20000000000000000000000000000001',null,'roles') ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000001','/login.html'        ,null                              ,null,'anon')  ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000002','/user/list.html'    ,'20000000000000000000000000000001',null,'perms') ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000003','/user/add.html'     ,'20000000000000000000000000000002',null,'perms') ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000004','/user/edit.html'    ,'20000000000000000000000000000003',null,'perms') ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000005','/user/del.html'     ,'20000000000000000000000000000004',null,'perms') ;
+insert into `sysFunctionT`(`sfId`,`sfValue`,`spId`,`srId`,`sfType`) VALUES('40000000000000000000000000000006','/test.html'         ,'20000000000000000000000000000001',null,'roles') ;
 
 select * from `sysFunctionT`;
 /********+*********+*********+*********+*********+*********+*/

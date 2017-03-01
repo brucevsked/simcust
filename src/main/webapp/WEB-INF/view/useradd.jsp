@@ -25,6 +25,6 @@ request.setAttribute("basePath", basePath);
   </head>
   
   <body>
-    useradd page. <br>
+    useradd page. 添加权限<br>
   </body>
 </html>

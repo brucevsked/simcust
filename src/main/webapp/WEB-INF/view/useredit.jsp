@@ -25,6 +25,6 @@ request.setAttribute("basePath", basePath);
   </head>
   
   <body>
-    useredit page. <br>
+    useredit page. 修改权限<br>
   </body>
 </html>

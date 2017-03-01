@@ -6,12 +6,10 @@ import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vsked.service.SysUserSer;
@@ -59,6 +57,12 @@ public class LoginCtl extends BaseController{
 	public String userList(){
 		log.info("user/list");
 		return "userlist";
+	}
+	
+	@GetMapping("user/del")
+	public String userDel(){
+		log.info("user/del");
+		return "userdel";
 	}
 	
 	/**

@@ -25,6 +25,6 @@ request.setAttribute("basePath", basePath);
   </head>
   
   <body>
-    userlist page. 列表权限<br>
+    userdel page. 删除权限<br>
   </body>
 </html>
