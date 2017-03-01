@@ -30,7 +30,7 @@ public class ChainDefinitionSectionMetaSource implements FactoryBean<Ini.Section
     SysRoleSer sysRoleService;
 
     //静态资源访问权限
-    private String filterChainDefinitions = "/js/**=anon";
+    private String filterChainDefinitions = "/static/**=anon";
 
     public Ini.Section getObject() throws Exception {
     	List<Map<String, Object>> list = sysFunctionService.getSysFunctionList();
@@ -83,7 +83,7 @@ public class ChainDefinitionSectionMetaSource implements FactoryBean<Ini.Section
         section.put("/js/**", "anon");
         section.put("/css/**", "anon");
         
-        section.put("/login", "anon");
+        section.put("/login.html", "anon");
         section.put("/page403", "anon");
         //所有资源的访问权限，必须放在最后
         section.put("/**", "authc");

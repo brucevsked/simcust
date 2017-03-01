@@ -6,7 +6,6 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
@@ -39,10 +38,11 @@ public class SysUserSer extends BaseService{
 			String suName=(String)m.get("suName");
 			String suPass=(String)m.get("suPass");
 			if(StringUtils.isNotEmpty(suName) && StringUtils.isNotEmpty(suPass) ){
-				suPass=DigestUtils.md5Hex(suPass.getBytes());
+//				suPass=DigestUtils.md5Hex(suPass.getBytes());
 				//使用shiro管理登录
 				SecurityUtils.getSubject().login(new UsernamePasswordToken(suName, suPass));
-				return "redirect:/mainPage";
+				log.info("i has login ok"+suName);
+				return "index";
 			}else{
 				req.setAttribute("error", "用户名或密码为空！");
 				return "login";

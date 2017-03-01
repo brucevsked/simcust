@@ -10,11 +10,6 @@ public class UserController {
 	
 	public Logger log = Logger.getLogger(UserController.class);
 	
-	@GetMapping("index")
-	public String index(){
-		System.out.println("get index");
-		log.info("here is messagea1");
-		return "index";
-	}
+	
 
 }

@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.vsked.dao.SysUserDao;
 
@@ -139,5 +140,9 @@ public class BaseService {
             destDirName = destDirName + File.separator;
         }
         return dir.mkdirs();
+    }
+    
+    public void addMessage(RedirectAttributes redirectAttributes, String messages) {
+        redirectAttributes.addFlashAttribute("message", messages);
     }
 }
